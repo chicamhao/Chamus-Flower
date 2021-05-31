@@ -4,10 +4,6 @@
     if 4 boxes = BUTM (clue from television puzzle), puzzle is solved
 */
 
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class CabinetPuzzle : WordPuzzle {
     public void DragLettreOne()
     {
@@ -91,5 +87,4 @@ public class CabinetPuzzle : WordPuzzle {
     {
          DropLettreBase(9);
     }
-
 }

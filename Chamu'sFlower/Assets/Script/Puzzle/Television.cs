@@ -1,10 +1,8 @@
-/*
-    If player's inventory have the remote, player can control the object turn on or off
-    If player turns on and off the tele 3 times on a row (countControled = 6), show a clue about "Beauty under the moon"
+ /*
+    The object only can control by item 'remote' in player's inventory
+    If the player turns on the object 3 times on a row (countControled = 6), show a clue about "Beauty under the moon"
 */
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
@@ -24,7 +22,7 @@ public class Television : Interactable
     public GameObject option;
     public Text textChoise;
     //zoom the object when ever interacting, tvZoom_on when the tv turns on and opposite
-    public GameObject tvZoom_on ,tvZoom_off;
+    public GameObject tvZoom_on ,tvZoom_off, tvlight;
     //text on the tv before and after solve the puzzle
     public GameObject textNor, textSucc; 
     //black when the tv turns off
@@ -88,11 +86,13 @@ public class Television : Interactable
             currentStatus = StatusOfTV.On;
             FindObjectOfType<AudioManager>().Play("tv");
             tvZoom_off.SetActive(false);
+            tvlight.SetActive(true);
         }
         else {
             currentStatus = StatusOfTV.Off;
             FindObjectOfType<AudioManager>().Pause("tv");
             tvZoom_on.SetActive(false);
+            tvlight.SetActive(false);
         }
         option.SetActive(false);
         EventSystem.current.SetSelectedGameObject(null);

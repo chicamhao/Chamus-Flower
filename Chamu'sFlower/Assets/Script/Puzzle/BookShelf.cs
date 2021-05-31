@@ -3,10 +3,7 @@
     Receive a clue about whole story of "Beauty under the moon" when the player solve the puzzle
 */
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class BookShelf : Interactable
 {   
