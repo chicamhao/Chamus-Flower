@@ -1,2 +1,1 @@
-# Chamus-Flower
- My first little game
+# Flower-Of-Chamu
