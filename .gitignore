@@ -58,3 +58,8 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+.vsconfig
+ChamusFlower/Library
+ChamusFlower/Logs
+ChamusFlower/Packages
+ChamusFlower/UserSettings
