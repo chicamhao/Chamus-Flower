@@ -1,8 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
-using Assets.Scripts.Manager.Scene;
 
-namespace Scripts.Title
+namespace Manager.Scene
 {
     public sealed class TitleScene : MonoBehaviour
     {

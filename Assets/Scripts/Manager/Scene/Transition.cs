@@ -1,6 +1,6 @@
 ﻿using UnityEngine.SceneManagement;
 
-namespace Assets.Scripts.Manager.Scene
+namespace Manager.Scene
 {
     public sealed class Transition
     {
@@ -16,7 +16,7 @@ namespace Assets.Scripts.Manager.Scene
 
         public static void Exit()
         {
-            ApplicationHandler.Instance.ExitApplication();
+            UnityEngine.Application.Quit();
         }
     }
 
