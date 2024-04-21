@@ -6,6 +6,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Utility;
+
 public class TrigFlower : MonoBehaviour
 {   
     public GameObject Flower, Clock;
@@ -47,14 +49,15 @@ public class TrigFlower : MonoBehaviour
             spriteRendererFlo.sprite = booledFlower;
             spriteRendererClo.sprite = midniClock;
             Active = true;
-            FindObjectOfType<AudioManager>().Pause("backround"); 
+            Audio.Instance.Play(Sound.Background);
+
         }
     }
 
     IEnumerator Coroutine()
     {
         alreadyShow = true;
-        FindObjectOfType<AudioManager>().Play("door");
+        Audio.Instance.Play(Sound.Door);
         yield return new WaitForSeconds(1.5f);
 
         //Show dialog box
