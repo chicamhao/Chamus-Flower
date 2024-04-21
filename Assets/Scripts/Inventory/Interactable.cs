@@ -3,10 +3,8 @@
     The player interacts with object by press key space
 */
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+
 public class Interactable : MonoBehaviour
 {
     protected bool activeArea;

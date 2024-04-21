@@ -1,31 +1,34 @@
 ﻿using UnityEngine.SceneManagement;
 
-namespace Assets.Scripts.Manager.Scene
+namespace Manager.Scene
 {
     public sealed class Transition
     {
-        private static Transition instance;
-
-        public static Transition Instance
+        public static void Load(Scene scene)
         {
-            get
+            SceneManager.LoadScene(scene switch
             {
-                if (instance == null)
-                    instance = new Transition();
-                return instance;
-            }
+                Scene.Title => SceneName.Title,
+                Scene.Playground => SceneName.Playground,
+                _ => throw new System.NotImplementedException($"{scene}")
+            });
         }
 
-        public void LoadScene(Scene scene)
-            => SceneManager.LoadScene(scene.ToString());
+        public static void Exit()
+        {
+            UnityEngine.Application.Quit();
+        }
     }
 
-    //Ensure enum has the same name as scene
     public enum Scene
     {
         Title,
-        Livingroom,
-        Bedroom,
-        Bathroom
+        Playground
+    }
+
+    public sealed class SceneName
+    {
+        public static string Title = "title";
+        public static string Playground = "playground";        
     }
 }
