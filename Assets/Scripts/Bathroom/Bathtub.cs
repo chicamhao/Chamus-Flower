@@ -40,7 +40,7 @@ public class Bathtub : Interactable
         Player.SetActive(false);
         option.SetActive(false);
         isHided = true;
-        Audio.Instance.Play(Sound.Door);
+        Audio.Instance.Pause(Sound.Door);
         Audio.Instance.Play(Sound.Finding);
         EventSystem.current.SetSelectedGameObject(null);
         Light.SetActive(false);
