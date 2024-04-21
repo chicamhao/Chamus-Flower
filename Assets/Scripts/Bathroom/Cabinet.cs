@@ -7,6 +7,8 @@
 
 using UnityEngine;
 using UnityEngine.UI;
+using Utility;
+
 public class Cabinet : Interactable
 {   
     public GameObject PuzzleWord;
@@ -58,8 +60,8 @@ public class Cabinet : Interactable
         itemText.text = Content.itemDescription;
         //puzzle off
         spriteRenderer.sprite = openSprite;
-        //sound
-        FindObjectOfType<AudioManager>().Play("cupboard");
+
+        Audio.Instance.Play(Sound.Cupboard);
 
         isOpened = true;
     }

@@ -2,6 +2,7 @@
     A little horror when a black long hair spills up from the toilet
 */
 using UnityEngine;
+using Utility;
 
 public class Toilet : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class Toilet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other){
         if(other.CompareTag("Player") && !isSpilled){
             animToilet.SetBool("spilled", true);
-            FindObjectOfType<AudioManager>().Play("toilet");
+            Audio.Instance.Play(Sound.Toilet);
             Teddy.SetActive(true);
             isSpilled = true;         
         }

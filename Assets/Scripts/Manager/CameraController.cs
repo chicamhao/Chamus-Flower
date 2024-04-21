@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Utility;
 
 public class CameraController : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         dialogBox.SetActive(true);
-        FindObjectOfType<AudioManager>().Play("backround"); 
+        Audio.Instance.Play(Sound.Background);
     }
 
     void LateUpdate()

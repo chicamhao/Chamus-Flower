@@ -6,6 +6,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using Utility;
 
 enum StatusOfTV {
     On, Off
@@ -84,13 +85,13 @@ public class Television : Interactable
 
         if (currentStatus == StatusOfTV.Off){
             currentStatus = StatusOfTV.On;
-            FindObjectOfType<AudioManager>().Play("tv");
+            Audio.Instance.Play(Sound.TV);
             tvZoom_off.SetActive(false);
             tvlight.SetActive(true);
         }
         else {
             currentStatus = StatusOfTV.Off;
-            FindObjectOfType<AudioManager>().Pause("tv");
+            Audio.Instance.Pause(Sound.TV);
             tvZoom_on.SetActive(false);
             tvlight.SetActive(false);
         }

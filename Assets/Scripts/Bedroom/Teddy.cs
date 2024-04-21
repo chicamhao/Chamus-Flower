@@ -5,8 +5,9 @@
 
 using UnityEngine;
 using UnityEngine.UI;
+using Utility;
 
-public class Teddy : Interactable
+public sealed class Teddy : Interactable
 {
     public Inventory Inventory;
     public Item contents;
@@ -40,14 +41,13 @@ public class Teddy : Interactable
       }
     }
 
-    public void openTeddyOption(){
+    public void OpenTeddyOption()
+    {
+        Audio.Instance.Play(Sound.Teddy);
+        anim.SetBool("teared", true);
 
-      FindObjectOfType<AudioManager>().Play("teddy");
-
-      anim.SetBool("teared", true);
-
-      Option.SetActive(false);
-      isOpened = true;
+        Option.SetActive(false);
+        isOpened = true;
     }
     
     public void doNothingOption(){

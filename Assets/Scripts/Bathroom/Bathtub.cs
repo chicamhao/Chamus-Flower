@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using Utility;
 
 public class Bathtub : Interactable
 {
@@ -39,8 +40,8 @@ public class Bathtub : Interactable
         Player.SetActive(false);
         option.SetActive(false);
         isHided = true;
-        FindObjectOfType<AudioManager>().Pause("door");
-        FindObjectOfType<AudioManager>().Play("finding");
+        Audio.Instance.Play(Sound.Door);
+        Audio.Instance.Play(Sound.Finding);
         EventSystem.current.SetSelectedGameObject(null);
         Light.SetActive(false);
 

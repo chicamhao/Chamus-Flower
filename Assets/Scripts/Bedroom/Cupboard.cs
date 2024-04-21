@@ -5,6 +5,8 @@
 
 using UnityEngine;
 using UnityEngine.UI;
+using Utility;
+
 public class Cupboard : Interactable
 {
     public GameObject diary;
@@ -27,7 +29,7 @@ public class Cupboard : Interactable
         if(Input.GetKeyDown(KeyCode.Space) && activeArea){
             if(PlayerInventory.checkContains(Key) && !isOpened){
                 spriteRenderer.sprite = cupborOpen;
-                FindObjectOfType<AudioManager>().Play("key");
+                Audio.Instance.Play(Sound.Key);
                 isOpened = true;
                 return;
             }

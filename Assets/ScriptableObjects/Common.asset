@@ -13,3 +13,65 @@ MonoBehaviour:
   m_Name: Common
   m_EditorClassIdentifier: 
   PlayerSpeed: 10
+  SoundCollection:
+    Sounds:
+    - Sound: 0
+      Clip: {fileID: 8300000, guid: 95b5260630f0f374cbc73b11ad9777b0, type: 3}
+      Volume: 0.5
+      Pitch: 1
+      Source: {fileID: 0}
+      Loop: 1
+    - Sound: 1
+      Clip: {fileID: 8300000, guid: 8d2d047eb9aa71c4f80ea72281a27c52, type: 3}
+      Volume: 1
+      Pitch: 1.74
+      Source: {fileID: 0}
+      Loop: 0
+    - Sound: 2
+      Clip: {fileID: 8300000, guid: d203339aafeff4547921a899cfa0a0f3, type: 3}
+      Volume: 1
+      Pitch: 1.31
+      Source: {fileID: 0}
+      Loop: 0
+    - Sound: 3
+      Clip: {fileID: 8300000, guid: 67c259345bdeaba4d9ed46507f9c1aa3, type: 3}
+      Volume: 1
+      Pitch: 1.45
+      Source: {fileID: 0}
+      Loop: 0
+    - Sound: 4
+      Clip: {fileID: 8300000, guid: e4b8fe2f2e5e2e14a86d470416a0dc02, type: 3}
+      Volume: 1
+      Pitch: 1.5
+      Source: {fileID: 0}
+      Loop: 0
+    - Sound: 5
+      Clip: {fileID: 8300000, guid: 4282787b35c188c43869ca6384b56b5b, type: 3}
+      Volume: 1
+      Pitch: 1.3
+      Source: {fileID: 0}
+      Loop: 0
+    - Sound: 6
+      Clip: {fileID: 8300000, guid: f1452262094d0134b93c96cd4e405745, type: 3}
+      Volume: 1
+      Pitch: 1
+      Source: {fileID: 0}
+      Loop: 0
+    - Sound: 7
+      Clip: {fileID: 8300000, guid: 1db50eeaad0c5934994bd6a295c26dba, type: 3}
+      Volume: 1
+      Pitch: 1
+      Source: {fileID: 0}
+      Loop: 0
+    - Sound: 8
+      Clip: {fileID: 8300000, guid: 9098c1844a259934f98e35fc8c50374d, type: 3}
+      Volume: 1
+      Pitch: 1.4
+      Source: {fileID: 0}
+      Loop: 0
+    - Sound: 9
+      Clip: {fileID: 8300000, guid: 9098c1844a259934f98e35fc8c50374d, type: 3}
+      Volume: 1
+      Pitch: 1
+      Source: {fileID: 0}
+      Loop: 0
