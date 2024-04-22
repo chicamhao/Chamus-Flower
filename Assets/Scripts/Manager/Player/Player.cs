@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
         if(direction != Vector3.zero)
         {
             direction.Normalize();
-            transform.Translate(Common.Data.PlayerSpeed * Time.deltaTime * direction);
+            transform.Translate(Common.Constants.PlayerSpeed * Time.deltaTime * direction);
 
             _animator.SetFloat("moveX", direction.x);
             _animator.SetFloat("moveY", direction.y);

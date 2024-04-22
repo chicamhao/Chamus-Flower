@@ -1,5 +1,6 @@
 ﻿
-public class BookShelfPuzzle : WordPuzzle {
+public class BookShelfPuzzle : WordPuzzle
+{
 
     //---------------------------Dragging Function-----------------------------
     public void DragLettreOne()
@@ -86,5 +87,4 @@ public class BookShelfPuzzle : WordPuzzle {
     {
          DropLettreBase(9);
     }
-
 }

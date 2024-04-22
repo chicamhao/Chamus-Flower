@@ -1,12 +1,11 @@
-﻿/*
-  This object hold a item to solve televison puzzle
-  Player does a option choice and must choose tearing the teddy bear to take the item "Remote"
-*/
-
+﻿
 using UnityEngine;
 using UnityEngine.UI;
 using Utility;
 
+
+// This object hold a item to solve televison puzzle
+// Player does a option choice and must choose tearing the teddy bear to take the item "Remote"
 public sealed class Teddy : Interactable
 {
     public Inventory Inventory;
@@ -17,28 +16,25 @@ public sealed class Teddy : Interactable
     public GameObject Option; 
     private Animator anim;
 
-    void Start(){
-      //init the animator of the teddy.
-      anim = GetComponent<Animator>();
+    void Start()
+    {
+        _object = Option;
+        _onInteract += OnInteract;
+        anim = GetComponent<Animator>();
     }
 
-    void Update(){ 
-      //show option choices
-      if (Input.GetKeyDown(KeyCode.Space) && activeArea){
-        if (!isOpened && !isTakenRemote)
-        interactObject(Option);
-        
-        //take the remote.
-        else if (isOpened && !isTakenRemote) {
-          dialogBox.SetActive(true);
-          dialogText.text = contents.itemDescription;
-          Inventory.AddItem(contents);
-          isTakenRemote = true;
+    private void OnInteract()
+    {
+        if (isOpened && !isTakenRemote)
+        {
+            DialogLauncher.Instance.LaunchCommon(contents.itemDescription);
+            Inventory.AddItem(contents);
+            isTakenRemote = true;
         }
-        //already taken the remote.
         else if (isOpened && isTakenRemote)
-          dialogBox.SetActive(false);
-      }
+        {
+            DialogLauncher.Instance.Deactivate();
+        }
     }
 
     public void OpenTeddyOption()
@@ -50,18 +46,9 @@ public sealed class Teddy : Interactable
         isOpened = true;
     }
     
-    public void doNothingOption(){
-      Option.SetActive(false);
-    }
-
-    public override void OnTriggerExit2D(Collider2D other)
+    public void doNothingOption()
     {
-      if (other.CompareTag("Player") && !other.isTrigger)
-      {
-        activeArea = false;
-        dialogBox.SetActive(false);
         Option.SetActive(false);
-      }
     }
 }
 

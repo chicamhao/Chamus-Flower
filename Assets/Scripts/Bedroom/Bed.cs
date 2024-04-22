@@ -24,14 +24,14 @@ public class Bed : Interactable
         //Trigger "flower blooms" on
         trigger = TriggerFlo.GetComponent<TrigFlower>().Active;
         
-        if (Input.GetKeyDown(KeyCode.Space) && activeArea && trigger && !isHided){
+        if (Input.GetKeyDown(KeyCode.Space) && _isEntered && trigger && !isHided){
             startChoice();
         }
     }
     public override void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player") && !other.isTrigger){
-            activeArea = false;
+            _isEntered = false;
             option.SetActive(false);
         }
     }

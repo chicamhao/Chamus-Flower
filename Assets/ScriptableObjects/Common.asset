@@ -12,7 +12,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d61e4070ce2f54517b2cb578efd5ba4f, type: 3}
   m_Name: Common
   m_EditorClassIdentifier: 
-  PlayerSpeed: 10
+  Constants:
+    PlayerSpeed: 20
+    ConnectedPuzzleDistance: 50
+    Newspaper_1: "TORTURED BY MADNESS, WOMEN KILLS \tHERSELF IN HER APARTMENT   \tA
+      22-year-old woman committed suicide by jumped from a 16th-floor window of the
+      apartment with posture upside down. Her skull broke into thousands pieces. 
+      \tAs known from her neighbor, \"Yes, she's beautiful as well as crazy. Since
+      the business travel of her husband, she cries loudly everyday, this happened
+      sudden in the middle night that make I couldn't sleep. She shout out at anyone
+      who wants to see her..\""
+    Introduction_1: "   I returned secretly home from my business travel. I want
+      to surprise her...\n   Chamu, my beautiful wife, must have missed me a lot
+      but I can't contact to her anyway. The house was darker than the last time
+      I saw it. Don't know what happen but maybe something's wrong here\r. Surely
+      I must find Chamu first..."
+  Appearance:
+    LivingRoom:
+      Camera: {x: 50, y: 14.5, z: -4}
+      Player: {x: 37.35, y: 4.89, z: 0}
+    BedRoom:
+      Camera: {x: 10, y: 14.5, z: -4}
+      Player: {x: 25.35, y: 4.89, z: 0}
+    Toilet:
+      Camera: {x: -30, y: 14.5, z: -4}
+      Player: {x: 13.35, y: 4.89, z: 0}
   SoundCollection:
     Sounds:
     - Sound: 0
