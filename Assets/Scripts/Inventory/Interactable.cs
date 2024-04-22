@@ -1,39 +1,67 @@
-﻿/*
-    This is the base class of interactable objects.
-    The player interacts with object by press key space
-*/
-
+﻿using System;
+using Manager;
 using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
-    protected bool activeArea;
-    public GameObject Canvas;
+    protected bool _isEntered;
+    protected Action<Collider2D> _onEnter;
+    protected Action _onExit;
+    protected Action _onInteract;
 
-    void Update(){
-        interactObject(Canvas);
-    }
+    [SerializeField] private ObjectType _type;
+    [SerializeField] protected GameObject _object;
 
-    public void OnTriggerEnter2D(Collider2D other){
-        if(other.CompareTag("Player")){
-            activeArea = true;
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && _isEntered)
+        {
+            Interact();
         }
     }
 
-    public virtual void OnTriggerExit2D(Collider2D other){
-        if(other.CompareTag("Player")){
-            activeArea = false;
-            Canvas.SetActive(false);
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            _isEntered = true;
+            _onEnter?.Invoke(other);
         }
     }
 
-    protected void interactObject(GameObject interactiveObj){
-        if(Input.GetKeyDown(KeyCode.Space) && activeArea){
-            if(interactiveObj.activeInHierarchy){
-                interactiveObj.SetActive(false);
-            }else{
-                interactiveObj.SetActive(true);
+    public virtual void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            _isEntered = false;
+            if (_object != null)
+            {
+                _object.SetActive(false);
             }
+            _onExit?.Invoke();
         }
+    }
+
+    private void Interact()
+    {
+        if (_object == null)
+        {
+            Director.Instance.GetInteractObject(_type);
+        }
+
+        if (_object != null)
+        {
+            _object.SetActive(!_object.activeInHierarchy);
+            _onInteract?.Invoke();
+
+        }
+    }
+
+    public enum ObjectType
+    {
+        Empty,
+        Newspaper,
+        CatPicture,
+        Bush
     }
 }
