@@ -39,7 +39,10 @@ namespace Utility
 
             public void Dispose()
             {
-                s_cache?.Dispose();
+                if (_instance is IDisposable d)
+                {
+                    d.Dispose();
+                }
                 s_cache = null;
             }
         }

@@ -38,7 +38,8 @@ public class Television : Interactable
 
     // Update is called once per frame
     void Update(){
-        if (Input.GetKeyDown(KeyCode.Space) && activeArea){
+        if (Input.GetKeyDown(KeyCode.Space) && _isEntered)
+        {
             //have the remote in inventory
             if(PlayerInventory.checkContains(ItemContents)){
                 startChoice();
@@ -61,7 +62,7 @@ public class Television : Interactable
    public override void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player") && !other.isTrigger){
-            activeArea = false;
+            _isEntered = false;
             tvZoom_on.SetActive(false);
             tvZoom_off.SetActive(false);
             option.SetActive(false);

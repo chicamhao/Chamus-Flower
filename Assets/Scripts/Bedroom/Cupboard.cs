@@ -26,7 +26,8 @@ public class Cupboard : Interactable
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && activeArea){
+        if(Input.GetKeyDown(KeyCode.Space) && _isEntered)
+        {
             if(PlayerInventory.checkContains(Key) && !isOpened){
                 spriteRenderer.sprite = cupborOpen;
                 Audio.Instance.Play(Sound.Key);
@@ -53,7 +54,7 @@ public class Cupboard : Interactable
     public override void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player") && !other.isTrigger){
-            activeArea = false;
+            _isEntered = false;
             dialogBox.SetActive(false);
             diary.SetActive(false);
         }
