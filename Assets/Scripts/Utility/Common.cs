@@ -1,14 +1,10 @@
-﻿using UnityEngine;
-using System.Collections;
-using UnityEngine.Assertions;
+﻿using UnityEngine.Assertions;
 
 namespace Utility
 {
 	public sealed class Common
 	{
 		public static Common Instance => DIContainer.Get<Common>();
-
-		public static CommonSO Data => Instance._data;
 		private readonly CommonSO _data;
 
 		public Common(CommonSO data)
@@ -16,5 +12,8 @@ namespace Utility
 			Assert.IsNotNull(data);
 			_data = data;
 		}
+
+		public static Constants Constants => Instance._data.Constants;
+		public static Appearance Appearance => Instance._data.Appearance;
 	}
 }

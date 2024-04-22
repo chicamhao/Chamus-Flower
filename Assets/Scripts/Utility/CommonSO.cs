@@ -6,8 +6,26 @@ namespace Utility
     [CreateAssetMenu]
 	public sealed class CommonSO : ScriptableObject
 	{
-        public float PlayerSpeed = 20f;
+        public Constants Constants;
+
+        public Appearance Appearance;
+
         public SoundCollection SoundCollection;
+    }
+
+    [Serializable]
+    public sealed class Constants
+    {
+        public float PlayerSpeed = 20f;
+
+        // UI
+        public float ConnectedPuzzleDistance = 50f;
+
+        [TextArea(5, 5)]
+        public string Newspaper_1;
+
+        [TextArea(5, 5)]
+        public string Introduction_1;
     }
 
     [Serializable]
@@ -27,6 +45,21 @@ namespace Utility
             [HideInInspector]
             public AudioSource Source;
             public bool Loop;
+        }
+    }
+
+    [Serializable]
+    public sealed class Appearance
+    {
+        public Data LivingRoom;
+        public Data BedRoom;
+        public Data Toilet;
+
+        [Serializable]
+        public sealed class Data
+        {
+            public Vector3 Camera;
+            public Vector3 Player;
         }
     }
 
