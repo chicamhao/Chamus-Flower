@@ -1,12 +1,6 @@
 # Profile
 My first game by Unity. Self-programmed, self-art painted and self-sound created.
-
-
 Inspired by a creepypasta, uncovering the terrible mystery after the horrific death of your wife, Chamu. 
-
-
-# Demo
-https://simmer.io/@camhao/flower-of-chamu
 
 Some screenshots:
 
